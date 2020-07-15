@@ -1,0 +1,72 @@
+[
+    {
+        "id": "001",
+        "title": "SAMSUNG 65-inch Class QLED Q80T Series - 4K UHD  Direct Full Array 12X Quantum HDR 12X  Smart TV with Alexa Built-in (QN65Q80TAFXZA, 2020 Model)",
+        "price": 1497.9,
+        "rating": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/61DIUfDxBtL._AC_SL1000_.jpg"
+    },
+    {
+        "id": "002",
+        "title": "MINGER Led Strip Lights Kit, 32.8Ft RGB Light Strip with Remote, Controller Box and Support Clips for Room, Bedroom, Home, Kitchen Cabinet, Party Decoration 12V/3A Adapter, Non-Waterproof, 2x16.4Ft",
+        "price": 22.9,
+        "rating": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71AZtnQMRvL._AC_SL1095_.jpg"
+    },
+    {
+        "id": "003",
+        "title": "New Apple iPhone SE (64GB, (Product) RED) [Carrier Locked] + Carrier Subscription [Cricket Wireless]",
+        "price": 65000,
+        "rating": 5,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/414BfHxIZiL._AC_SX184_.jpg"
+    },
+    {
+        "id": "004",
+        "title": "Comfort Spaces Colin 9 Piece Comforter Set All Season Microfiber Stripe Printed Bedding and Sheet with Two Side Pockets, Full, Red/Grey",
+        "price": 410,
+        "rating": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/61rdY9dkO7L._AC_US218_.jpg"
+    },
+    {
+        "id": "005",
+        "title": "DearHouse 12 Strands Artificial Ivy Leaf Plants Vine Hanging Garland Fake Foliage Flowers Home Kitchen Garden Office Wedding Wall Decor, 84 Feet, Green",
+        "price": 900,
+        "rating": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81mYn3I98yL._AC_SL1000_.jpg"
+    },
+    {
+        "id": "006",
+        "title": "rabbitgoo Dog Harness No-Pull Pet Harness Adjustable Outdoor Pet Vest 3M Reflective Oxford Material Vest for Dogs Easy Control for Small Medium Large Dogs",
+        "price": 10000,
+        "rating": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/51sR4d4WnvL._AC_SX466_.jpg"
+    },
+    {
+        "id": "007",
+        "title": "Ailun Screen Protector for iPhone 8 Plus/7 Plus/6s Plus/6 Plus-5.5 Inch 3Pack 2.5D Edge Tempered Glass Compatible with iPhone 8 Plus/7 plus/6s Plus/6 Plus-Anti Scratch Case Friendly",
+        "price": 420,
+        "rating": 2,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81n%2BlyIdOVL._AC_SL1500_.jpg"
+    },
+    {
+        "id": "008",
+        "title": "LK [4 PACK] Screen Protector for iPhone SE 2020 / iPhone SE2 Tempered Glass, 9H HD Clear Tempered Glass for iPhone 8/7 / 6S / 6 [Anti-Scratch] [Case Friendly] [Alignment Frame Easy Installation]",
+        "price": 500,
+        "rating": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/61%2BgNYBGkzL._AC_SL1000_.jpg"
+    },
+    {
+        "id": "009",
+        "title": "SkyGenius 10 x 50 Powerful Binoculars for Adults Durable Full-Size Clear Binoculars for Bird Watching Travel Sightseeing Hunting Wildlife Watching Outdoor Sports Games and Concerts",
+        "price": 500,
+        "rating": 3,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/61YaLg-nAlL._AC_SL1500_.jpg"
+    },
+    {
+        "id": "010",
+        "title": "Evagloss Lightening Serum with Kojic Acid for Face & Body 30ml",
+        "price": 1400,
+        "rating": 4,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/61ujTZEn4HL._SL1500_.jpg"
+    }
+]
