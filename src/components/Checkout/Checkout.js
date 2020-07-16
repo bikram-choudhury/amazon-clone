@@ -25,8 +25,8 @@ function Checkout() {
                                 <h2 className="checkout__title">Your Shopping Basket</h2>
                                 <div className="checkout__items">
                                     {
-                                        basket.map(item => (
-                                            <CheckoutProduct {...item} />
+                                        basket.map((item, index) => (
+                                            <CheckoutProduct key={index} {...item} />
                                         ))
                                     }
                                 </div>

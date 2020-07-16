@@ -19,6 +19,9 @@ export default function reducer(state, action) {
                 ...state,
                 basket: [...state.basket, action.item]
             };
+        case 'RESET_STATE':
+            // LOGIC TO RESET STATE
+            return initialState;
         case 'REMOVE_FROM_BASKET':
             // LOGIC TO REMOVE PRODUCTS FROM BASKET
             const index = state.basket.findIndex(item => item.id === action.id);

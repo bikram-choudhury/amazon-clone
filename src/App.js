@@ -6,10 +6,34 @@ import Home from './components/Home/Home';
 import Checkout from './components/Checkout/Checkout';
 import Login from './components/Login/Login';
 import { useStateValue } from './StateProvider';
-import { auth } from './firebase';
+import { auth, db } from './firebase';
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    if (user) {
+      const cartRef = db.ref(`/cart/${user.uid}`);
+      cartRef.on('child_added', (snapshot) => {
+        const newItem = snapshot.val();
+        if (newItem && Object.keys(newItem).length) {
+          dispatch({
+            type: 'ADD_TO_BASKET',
+            item: newItem
+          });
+        }
+      });
+      cartRef.on('child_removed', (snapshot) => {
+        const removedItem = snapshot.val();
+        if (removedItem && Object.keys(removedItem).length) {
+          dispatch({ type: 'REMOVE_FROM_BASKET', id: removedItem.id });
+        }
+      })
+    }
+    return () => {
+      user && db.ref().off();
+    }
+  }, [dispatch, user]);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -18,7 +42,7 @@ function App() {
         dispatch({ type: 'SET_USER', user: authUser });
       } else {
         // user is logged out
-        dispatch({ type: 'SET_USER', user: null });
+        dispatch({ type: 'RESET_STATE' });
       }
     });
 
@@ -27,7 +51,6 @@ function App() {
     }
   }, [dispatch]);
 
-  console.log(user);
   return (
     <Router>
       <div className="App">

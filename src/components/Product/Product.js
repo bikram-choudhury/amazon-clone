@@ -1,26 +1,30 @@
 import React from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
 import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC'
-import { useStateValue } from '../../StateProvider';
+import { auth, db } from '../../firebase';
 import './Product.css';
+import { useHistory } from 'react-router-dom';
 
 function Product({ id, title, price, rating, image }) {
 
-    const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis)
-    const [, dispatch] = useStateValue();
+    const loggedInUser = auth.currentUser;
+    const history = useHistory();
+    const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
+
     const addToBasket = () => {
-        // Add item to basket
-        dispatch({
-            type: 'ADD_TO_BASKET',
-            item: {
+        if(loggedInUser) {
+            const uid = loggedInUser.uid;
+            db.ref(`/cart/${uid}`).push({
                 id, title, price, rating, image
-            }
-        })
+            });
+        } else {
+            history.push('/login');
+        }
     }
     return (
         <div className="product">
             <div className="product__info">
-                <div tabindex="0">
+                <div tabIndex="0">
                     <ResponsiveEllipsis
                         style={{ whiteSpace: 'pre-wrap', height: '100px' }}
                         text={title}
@@ -35,8 +39,8 @@ function Product({ id, title, price, rating, image }) {
                 </p>
                 <div className="product__rating">
                     {
-                        Array(rating).fill().map(_ => (
-                            <p>
+                        Array(rating).fill().map((v, i) => (
+                            <p key={i}>
                                 <span role="img" aria-label="rating">⭐</span>
                             </p>
                         ))

@@ -10,7 +10,7 @@ import './Header.css';
 function Header() {
     const [{ basket, user }] = useStateValue();
 
-    const login = () => {
+    const logout = () => {
         if (user) {
             auth.signOut();
         }
@@ -31,7 +31,7 @@ function Header() {
             </div>
             <div className="header__nav">
                 <Link to={!user ? "/login" : ""} className="header__link">
-                    <div onClick={login} className="header_option">
+                    <div onClick={logout} className="header_option">
                         <span className="header_optionLineOne">Hello {user?.email}</span>
                         <span className="header_optionLineTwo">
                             {user ? 'Sign Out' : 'Sign In'}

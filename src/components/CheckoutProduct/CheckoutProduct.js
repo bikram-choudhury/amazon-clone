@@ -1,12 +1,18 @@
-import React from 'react'
-import './CheckoutProduct.css';
+import React from 'react';
+import { db } from '../../firebase';
 import { useStateValue } from '../../StateProvider';
+import './CheckoutProduct.css';
 
 function CheckoutProduct({ id, title, price, rating, image }) {
-    const [, dispatch] = useStateValue();
+    const [{ user }] = useStateValue();
 
     const removeFromBasket = () => {
-        dispatch({ type: 'REMOVE_FROM_BASKET', id })
+        const cartRef = db.ref(`/cart/${user.uid}`);
+        const findItemByIdQuery = cartRef.orderByChild("id").equalTo(id);
+        findItemByIdQuery.on('child_added', (snapshot) => {
+            snapshot.ref.remove();
+            findItemByIdQuery.off()
+        })
     };
     return (
         <div className="checkoutProduct">
@@ -19,8 +25,8 @@ function CheckoutProduct({ id, title, price, rating, image }) {
                 </p>
                 <div className="checkoutProduct__rating">
                     {
-                        Array(rating).fill().map(_ => (
-                            <p>
+                        Array(rating).fill().map((v, i) => (
+                            <p key={i}>
                                 <span role="img" aria-label="rating">⭐</span>
                             </p>
                         ))
